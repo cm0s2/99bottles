@@ -18,12 +18,20 @@ class Bottles
       "1 bottle of beer on the wall, " +
       "1 bottle of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
-      "no more bottles of beer on the wall.\n"
+      "#{quantity(number - 1)} bottles of beer on the wall.\n"
     else
       "#{number} bottles of beer on the wall, " +
       "#{number} bottles of beer.\n" +
       "Take #{pronoun(number)} down and pass it around, " +
-      "#{number - 1} #{container(number - 1)} of beer on the wall.\n"
+      "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
+    end
+  end
+
+  def quantity(number)
+    if number == 0
+      "no more"
+    else
+      number
     end
   end
 
