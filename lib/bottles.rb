@@ -15,11 +15,7 @@ class Bottles
   end
 
   def quantity(number)
-    if number == 0
-      "no more"
-    else
-      number.to_s
-    end
+    BottleNumber.new(number).quantity(number)
   end
 
   def container(number)
@@ -60,7 +56,7 @@ class BottleNumber
   def initialize(number)
     @number = number
   end
-  
+
   def container(number)
     if number == 1
       "bottle"
